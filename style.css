@@ -1,10 +1,15 @@
 header {
 text-align: center;
-color: red;
+color: blueviolet;
 font-family: 'Times New Roman', Times, serif;
 font-size: 30px ;
 
 }
 body{
     background-color: beige;
+    padding: 50px 50px;
+}
+img{
+    position: relative;
+    size: 10px;
 }
