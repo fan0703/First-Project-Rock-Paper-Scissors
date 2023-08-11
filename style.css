@@ -2,14 +2,23 @@ header {
 text-align: center;
 color: blueviolet;
 font-family: 'Times New Roman', Times, serif;
-font-size: 30px ;
+font-size: 40px ;
 
 }
 body{
+    padding:100px 50px;
     background-color: beige;
     padding: 50px 50px;
+    font-size: 30px;
 }
+.choices{
+    text-align: center;
+
+}
+.choice{
+    display: inline-block;
+    padding: 20px 10px;
+} 
 img{
-    position: relative;
-    size: 10px;
+    width: 200px;
 }
