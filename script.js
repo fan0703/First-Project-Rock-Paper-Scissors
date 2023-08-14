@@ -11,6 +11,7 @@ const scissores_div = document.querySelector("#scissors")
 const userScore_span = document.getElementById("user score")
 const computerScore_span = document.getElementById("computer score")
 const result = document.getElementById("result textcontent")
+const restart = document.querySelector("button")
 
 function getComputerChoice(){
     const choice = ["Rock","Paper","Scissors"];
@@ -23,58 +24,82 @@ function win(userChoiceSelection,computerChoice){
    userScore++
    userScore_span.textContent = userScore
    computerScore_span.textContent = computerScore
-   result.innerHTML = userChoiceSelection + " beats " + computerChoice + ", you win!"
+   const userUpper = "user".fontsize(3).sup()
+   const computerUpper = "computer".fontsize(3).sup()
+//    const choiceSelection = ducoment.querySelector()
+   result.innerHTML = `${userChoiceSelection}${userUpper} beats ${computerChoice}${computerUpper} , you win!`
 }
 
 function lose(userChoiceSelection,computerChoice){
-    computerScore++
-    userScore_span.textContent = userScore
-    computerScore_span.textContent = computerScore
-    result.innerHTML = userChoiceSelection + " beats " + computerChoice + ", you lose!"
+   computerScore++
+   userScore_span.textContent = userScore
+   computerScore_span.textContent = computerScore
+   const userUpper = "user".fontsize(3).sup()
+   const computerUpper = "computer".fontsize(3).sup()
+   result.innerHTML = `${userChoiceSelection}${userUpper} loses to ${computerChoice}${computerUpper} , you lose!`
 }
 
- function draw(userChoiceSelection,computerChoice){
-   
-    userScore_span.textContent = userScore
-    computerScore_span.textContent = computerScore
-    result.innerHTML = userChoiceSelection + " beats " + computerChoice + ", It's a draw!"
- }
+function draw(userChoiceSelection,computerChoice){
+   userScore_span.textContent = userScore
+   computerScore_span.textContent = computerScore
+   const userUpper = "user".fontsize(3).sup()
+   const computerUpper = "computer".fontsize(3).sup()
+   result.innerHTML = `${userChoiceSelection}${userUpper} equals ${computerChoice}${computerUpper} , It's a draw!`
+}
+function gameOver(){
+    
+    if(userScore === 10){
+     result.innerHTML = "Game Over! You Win!"  
+     rock_div.style.display = "none"
+     paper_div.style.display = "none"
+     scissores_div.style.display = "none"
+    }
+    if(computerScore === 10){
+     result.innerHTML = "Game Over! You Lose!"  
+     rock_div.style.display = "none"
+     paper_div.style.display = "none"
+     scissores_div.style.display = "none"
+    }
+}
 
+function restartGame(){
+    location.reload(true)  
+}
+restart.addEventListener('click', restartGame)
 
 rock_div.addEventListener('click', function(){
-    // getComputerChoice()
     computerChoice = getComputerChoice()
     userChoiceSelection = "Rock"
     if(computerChoice === "Scissors"){
-        // console.log("rock covers scissors, you win!")
         win(userChoiceSelection,computerChoice)
-       
+        gameOver()
     
     }
     if(computerChoice === "Paper"){
-        // console.log("rock cannot cover paper, you lose!")
         lose(userChoiceSelection,computerChoice)
-        // computerScore_span.innerHTML = computerScore
+        gameOver()
     }
     if(computerChoice  === "Rock"){
-        console.log("It's a draw")
         draw(userChoiceSelection,computerChoice)
+        gameOver()
     }
 })  
 
 paper_div.addEventListener('click', function(){
+    // gameOver()
     computerChoice = getComputerChoice()
     userChoiceSelection = "Paper"
     if(computerChoice === "Rock"){
-        // console.log("scissors cannnot cover rock , you lose!")
         win(userChoiceSelection,computerChoice)
+        // gameOver()
     }
     if(computerChoice  === "Paper"){
-        // console.log("scissors covers paper, you win!")
         draw(userChoiceSelection,computerChoice)
+        // gameOver()
     }
     if(computerChoice  === "Scissors"){
         lose(userChoiceSelection,computerChoice)
+        // gameOver()
      }
 })
 
@@ -82,26 +107,21 @@ scissores_div.addEventListener('click', function(){
     computerChoice = getComputerChoice()
     userChoiceSelection = "Scissors"
     if(computerChoice === "Rock"){
-        // console.log("paper covers rock, you win!")
         lose(userChoiceSelection,computerChoice)
+        // gameOver()
         
     }
     if(computerChoice === "Paper"){
-        // console.log("It's a draw")
         win(userChoiceSelection,computerChoice)
+        // gameOver()
     }
     if(computerChoice === "Scissors"){
-        // console.log("paper cannot cover scissors, you lose!")
         draw(userChoiceSelection,computerChoice)
+        // gameOver()
     }
 })
 
-//     if(userScore === 10 || computerScore === 10){
-//         console.log("Game over!")
-//     }
-//  })
-// })
-//  })
+
 
 
 //click play button ,

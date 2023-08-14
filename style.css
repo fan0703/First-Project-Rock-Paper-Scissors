@@ -1,19 +1,51 @@
 * header {
 text-align: center;
-color: blueviolet;
-font-family: 'Times New Roman', Times, serif;
+color: white;
+font-family: Arial, Helvetica, sans-serif;
 font-size: 40px ;
+background-color:darkgrey ;
+font-weight: bold;
 
 }
 body{
     padding:100px 50px;
-    background-color: beige;
+    background-color: #DCE1E9;
     padding: 50px 50px;
     font-size: 30px;
 }
-.score board{
-    /* text-align: center; */
-    padding: 50px,auto;
+.score-board{
+    margin: 30px auto;
+    border: 4px solid white;
+    padding: 20px 20px;
+    width: 200px;
+    mask-position: relative;
+    border-radius: 6px;
+    font-size: 35px;
+    text-align: center;
+    position: relative;
+}
+.title{
+    background-color:black;
+    color: white;
+    font-size: 22px;
+    
+}
+#user-board{
+    position: absolute;
+    top: 30px;
+    left: -20px;
+}
+#computer-board{
+    position: absolute;
+    top: 30px;
+    right: -40px;
+}
+.result > p {
+    text-align: center;
+    font-size:35px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    color:black;
 }
 .choices{
     text-align: center;
@@ -25,4 +57,24 @@ body{
 } 
 img{
     width: 200px;
+    border-radius: 60px;
 }
+button{
+    border: 2px solid white;
+    font-size: 18px;
+    position: absolute;
+    left:46%;
+  
+}
+/* .green{
+    border: 4px solid #4dcc7d;
+    box-shadow: 0 0 10px darkgreen;
+}
+.red{
+    border: 4px solid #fc121b;
+    box-shadow: 0 0 10px #d01115;
+}
+.grey{
+    border: 4px solid #616462;
+    box-shadow: 0 0 10px rgb(59, 59, 59);
+} */
