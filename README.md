@@ -1,6 +1,7 @@
 Rock Paper Scissors Game/ Project 1
 
 This game is my first project in the Web Development Immersive Program at Per Scholas. It is my version of Rock Paper Scissors Game.
+Here is the github-pages website link: https://fan0703.github.io/First-Project-Rock-Paper-Scissors/
 More information about the game: https://en.wikipedia.org/wiki/Rock_paper_scissors
 
 Game Functions:
