@@ -18,7 +18,6 @@ function getComputerChoice(){
     const computerRandom = Math.floor(Math.random()*3)
     return choice[computerRandom]   
 }
-// console.log(getComputerChoice())
 
 function win(userChoiceSelection,computerChoice){
    userScore++
@@ -28,6 +27,7 @@ function win(userChoiceSelection,computerChoice){
    const computerUpper = "computer".fontsize(3).sup()
 //    const choiceSelection = ducoment.querySelector()
    result.innerHTML = `${userChoiceSelection}${userUpper} beats ${computerChoice}${computerUpper} , you win!`
+//    userChoiceSelection.classList.add("green")
 }
 
 function lose(userChoiceSelection,computerChoice){
@@ -67,7 +67,7 @@ function restartGame(){
 }
 restart.addEventListener('click', restartGame)
 
-rock_div.addEventListener('click', function(){
+rock_div.addEventListener('click', ()=>{
     computerChoice = getComputerChoice()
     userChoiceSelection = "Rock"
     if(computerChoice === "Scissors"){
@@ -85,50 +85,37 @@ rock_div.addEventListener('click', function(){
     }
 })  
 
-paper_div.addEventListener('click', function(){
-    // gameOver()
+paper_div.addEventListener('click', ()=>{
     computerChoice = getComputerChoice()
     userChoiceSelection = "Paper"
     if(computerChoice === "Rock"){
         win(userChoiceSelection,computerChoice)
-        // gameOver()
+        gameOver()
     }
     if(computerChoice  === "Paper"){
         draw(userChoiceSelection,computerChoice)
-        // gameOver()
+        gameOver()
     }
     if(computerChoice  === "Scissors"){
         lose(userChoiceSelection,computerChoice)
-        // gameOver()
+        gameOver()
      }
 })
 
-scissores_div.addEventListener('click', function(){
+scissores_div.addEventListener('click', ()=>{
     computerChoice = getComputerChoice()
     userChoiceSelection = "Scissors"
     if(computerChoice === "Rock"){
         lose(userChoiceSelection,computerChoice)
-        // gameOver()
-        
+        gameOver()   
     }
     if(computerChoice === "Paper"){
         win(userChoiceSelection,computerChoice)
-        // gameOver()
+        gameOver()
     }
     if(computerChoice === "Scissors"){
         draw(userChoiceSelection,computerChoice)
-        // gameOver()
+        gameOver()
     }
 })
 
-
-
-
-//click play button ,
-//show three imgs
-//user choose one img to click,the img clicked addeventListener
-// computer random
-// if conditional
-// creat user object{name,score},add action method
-// if user win,user score++,if user lose ,computer score++
-// if score = 10,game over
